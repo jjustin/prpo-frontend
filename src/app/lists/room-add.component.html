@@ -1,0 +1,42 @@
+<h2><b>Add room</b></h2>
+<div *ngIf="room">
+    <form (ngSubmit)="submitForm()" onsubmit="return false;" ngNativeValidate>
+        <table>
+            <tr>
+                <td><label for="roomName" class="py-4 pr-3">Room name</label></td>
+                <td><input [(ngModel)]="room.name" id="roomName" name="roomName" class="rounded-md shadow-md p-0.5 my-1"
+                        required />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="owner" class="py-4 pr-3">Owner</label></td>
+                <td><input [(ngModel)]="room.owner" id="owner" name="owner" class="rounded-md shadow-md p-0.5 my-1"
+                        required />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="inRoom" class="py-4 pr-3">Currently in room</label></td>
+                <td><input [(ngModel)]="room.inRoom" id="inRoom" name="inRoom" type="number"
+                        class="rounded-md shadow-md p-0.5 my-1" required />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="size" class="py-4 pr-3">Room size</label></td>
+                <td><input [(ngModel)]="room.size" id="size" name="size" type="number"
+                        class="rounded-md shadow-md p-0.5 my-1" required />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="entrances" class="py-4 pr-3">Room entrances</label></td>
+                <td><input [(ngModel)]="entrances" id="entrances" name="entrances"
+                        class="rounded-md shadow-md p-0.5 my-1" required />
+                </td>
+            </tr>
+        </table>
+
+        <br />
+        <button class="shadow-md bg-white" type="button" (click)="back()">
+            <- Back</button>
+                <button class="shadow-md bg-white" type="submit">Add</button>
+    </form>
+</div>

@@ -1,0 +1,15 @@
+<h2>Rooms:</h2>
+
+<ul class="rooms">
+    <li *ngFor="let room of rooms" class="flex flex-row justify-between items-center">
+        <span>- {{room.name}}</span>
+        <div>
+
+            <button class="shadow-md bg-white" (click)="toDetails(room)">More</button>
+            <button class="shadow-md bg-red-300	" (click)="delete(room); $event.stopPropagation()">
+                Delete
+            </button>
+        </div>
+    </li>
+    <button class="shadow-md bg-white" (click)="addRoom()">Add room</button>
+</ul>

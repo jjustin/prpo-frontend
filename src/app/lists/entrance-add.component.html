@@ -1,0 +1,18 @@
+<h2><b>Add entrance</b></h2>
+<div>
+    <form (ngSubmit)="submitForm()" onsubmit="return false;" ngNativeValidate>
+        <table>
+            <tr>
+                <td><label for="entranceName" class="py-4 pr-3">Entrance name</label></td>
+                <td><input [(ngModel)]="name" id="entranceName" name="entranceName"
+                        class="rounded-md shadow-md p-0.5 my-1" required />
+                </td>
+            </tr>
+        </table>
+        <br />
+
+        <button class="shadow-md bg-white" type="button" (click)="back()">
+            <- Back</button>
+                <button class="shadow-md bg-white" type="submit">Add</button>
+    </form>
+</div>

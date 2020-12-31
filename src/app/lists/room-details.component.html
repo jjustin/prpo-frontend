@@ -1,0 +1,26 @@
+<div *ngIf="room">
+
+    <h3><b>{{room.name}}</b></h3>
+
+    <p>Owner: {{room.owner}}</p>
+    <p>Max in room: {{room.size}}</p>
+    <p>Currently in: {{room.inRoom}}</p>
+
+    <br>
+    <div>
+        <b> Entrances:</b>
+        <ul *ngFor="let entrance of room.entranceList" class="flex flex-row justify-between items-center">
+            <div>{{entrance.name}}</div>
+            <div>
+                <button class="shadow-md bg-white" (click)="peopleEnter(entrance.id)">Enter</button>
+                <button class="shadow-md bg-white" (click)="peopleLeave(entrance.id)">Leave</button>
+                <button class="shadow-md bg-red-300	" (click)="deleteEntrance(entrance.id)">Delete</button>
+            </div>
+        </ul>
+    </div>
+
+    <br>
+    <button class="shadow-md bg-white" (click)="back()">
+        <- Back</button>
+            <button class="shadow-md bg-white" (click)="addEntrance()">Add entrance</button>
+</div>
